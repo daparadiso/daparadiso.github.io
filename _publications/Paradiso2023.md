@@ -6,9 +6,8 @@ permalink: /publication/2023-10-16-lowenergyexplosions
 date: 2023-10-16
 venue: 'The Astrophysics Journal, Under Review'
 paperurl: 'https://arxiv.org/pdf/2310.10713.pdf'
-citation: 'Your Name, You. (2009). &quot;Paper Title Number 1.&quot; <i>Journal 1</i>. 1(1).'
+citation: ' Paradiso, D. A., Coughlin, E. R., Zrake, J., Pasham, D. R., 2023, ApJ, Under Review. doi:10.48550/arXiv.2310.10713'
 ---
-This paper is about the number 1. The number 2 is left for future work.
 
 [Download paper here](https://arxiv.org/pdf/2310.10713.pdf)
 
