@@ -15,7 +15,7 @@ I blow stars up with chalkboards and computers
 
 Recent Activities
 ------
-- **October 2023:** [Paper]{https://daparadiso.github.io/publication/2023-Bandopadhyay-etal} accepted to the Astrophysical Journal Letters
+- **October 2023:** [Paper](https://daparadiso.github.io/publication/2023-Bandopadhyay-etal) accepted to the Astrophysical Journal Letters
 
 - **October 2023:** Visited my high school alma mater and gave a talk to the physics class about my research
 
