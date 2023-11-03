@@ -9,7 +9,7 @@ redirect_from:
 ---
 My name is Daniel Paradiso and I am a [second-year graduate student](https://artsandsciences.syracuse.edu/people/graduate-students/daniel-paradiso/) in the Department of Physics at Syracuse University working with [Dr. Eric Coughlin](https://ecoughli.expressions.syr.edu/). My research is focused on understanding the deaths of stars in our universe through both self-induced and external mechanisms. 
 
-Reseaarch
+Research
 ------
 I blow stars up with chalkboards and computers 
 
