@@ -11,4 +11,4 @@ citation: ' Paradiso, D. A., Coughlin, E. R., Zrake, J., Pasham, D. R., 2023, Ap
 
 [Download paper here](https://arxiv.org/pdf/2310.10713.pdf)
 
-Recommended citation: Paradiso, D. A., Coughlin, E. R., Zrake, J., Pasham, D. R., 2023, ApJ, Under Review. doi:10.48550/arXiv.2310.10713
+#Recommended citation: Paradiso, D. A., Coughlin, E. R., Zrake, J., Pasham, D. R., 2023, ApJ, Under Review. doi:10.48550/arXiv.2310.10713
