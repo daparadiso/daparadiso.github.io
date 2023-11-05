@@ -9,6 +9,8 @@ redirect_from:
 
 {% include base_path %}
 
+**For a (possibly) more complete version of my CV, please [click here](https://daparadiso.github.io/files/CV.pdf).**
+
 Education
 ======
 * Ph.D in Physics, Syracuse University, 2022 -- Present
