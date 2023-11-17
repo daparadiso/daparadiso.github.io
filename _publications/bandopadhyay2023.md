@@ -9,4 +9,4 @@ paperurl: 'https://arxiv.org/pdf/2310.11496.pdf'
 citation: 'Bandopadhyay, A., et al. 2023, ApJL, doi:10.48550/arXiv.2310.11496'
 ---
 
-[Download paper here](https://arxiv.org/pdf/2310.11496.pdf)
+[Download paper here](https://arxiv.org/pdf/2310.11496.pdf){:target="_blank"}
