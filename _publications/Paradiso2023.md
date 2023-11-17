@@ -9,5 +9,5 @@ paperurl: 'https://arxiv.org/pdf/2310.10713.pdf'
 citation: ' Paradiso, D. A., Coughlin, E. R., Zrake, J., Pasham, D. R., 2023, ApJ, Under Review. doi:10.48550/arXiv.2310.10713'
 ---
 
-[Download paper here](https://arxiv.org/pdf/2310.10713.pdf)
+[Download paper here](https://arxiv.org/pdf/2310.10713.pdf){:target="_blank"}
 
