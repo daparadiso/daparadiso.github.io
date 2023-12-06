@@ -12,6 +12,7 @@ My name is Daniel Paradiso and I am a [second-year graduate student](https://art
 Research
 ------
 **Core-Collapse Supernovae:** 
+Anybody home?
 My primary research focus revolves around the spectacular, explosive deaths of massive stars in our universe which are known as core-collapse supernovae. In particular, I study the characteristics and dynamics of the shockwaves that are the byproducts of the formation and "bounce" of a neutron star during core-collapse using a combination of analytical and numerical methods. In a typical core-collapse supernova, the shockwave propagates through and inevitably unbinds the overlying stellar envelope. However, decades of observation and theoretical/computational research has shown that not all stars that undergo core-collapse generate successful explosions. I am extremely interested in trying to understanding of both failed and low-energy core-collapse supernovae, and I hope that my research will provide a better understand of the deaths of massive stars in addition to lending insight into the formation of the formation of compact objects (neutron stars and solar-mass black holes) after core-collapse. You can check out my papers related to this topic [here](https://daparadiso.github.io/publication)!
 
 **Tidal Disruption Events:**
