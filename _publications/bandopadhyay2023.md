@@ -5,7 +5,6 @@ permalink: /publication/2023-Bandopadhyay-etal
 #excerpt: 'This paper is about the number 2. The number 3 is left for future work.'
 date: 2023-10-17
 venue: 'The Astrophysical Journal Letters'
-paperurl: 'https://iopscience.iop.org/article/10.3847/2041-8213/ad0388'
 citation: 'Bandopadhyay, A. et al 2024 ApJL 961 L2, DOI: 10.3847/2041-8213/ad0388'
 ---
 
