@@ -16,11 +16,17 @@ My primary research focus revolves around the spectacular, explosive deaths of m
 
 **Tidal Disruption Events:**\
 Tidal disruption events (TDEs) occur when stars much like our sun wander too close to supermassive (> 1 million solar masses!) black holes that lurk in the centers of most galaxies. The tidal force imparted on the star overwhelms the gravitational force that is holding the star together and can rip the star apart into a stream of debris which, as it returns to the black hole, heats up and is emits observable radiation. TDEs therefore provide a way to probe the inner regions of otherwise quiescent galaxies!\
-Although this is not the main focus of my research, I have dabbled a bit in TDE research as a mentor for the [SURPh](https://daparadiso.github.io/outreach/) program the past two summers which resulted in a [publication](https://daparadiso.github.io/publication/2023-Bandopadhyay-etal). If you would like to learn more about TDE research, you should check out [Eric's website](https://ecoughli.expressions.syr.edu/research/)!
+Although this is not the main focus of my research, I have dabbled a bit in TDE research as a mentor for the [SURPh](https://daparadiso.github.io/outreach/) program the past two summers which resulted in a [publication](https://iopscience.iop.org/article/10.3847/2041-8213/ad0388). If you would like to learn more about TDE research, you should check out [Eric's website](https://ecoughli.expressions.syr.edu/research/)!
 
 Recent Activities
 ------
-- **October 2023:** My first first-author [paper](https://daparadiso.github.io/publication/2023-10-16-lowenergyexplosions) just got accepted to the Astrophysical Journal!
+- **April 2024:** I was just awarded the NSF Graduate Research Fellowship!!!
+
+- **January 2024:** My first, first-author [paper](https://iopscience.iop.org/article/10.3847/1538-4357/ad11f4) just got published in the Astrophysical Journal!
+
+- **January 2024:** The TDEs [paper](https://iopscience.iop.org/article/10.3847/2041-8213/ad0388) with all four SURPh students was published in the Astrophysical Journal Letters!
+
+- **January 2024:** I attended AAS where I gave a [poster presentation](https://aas242-aas.ipostersessions.com/?s=BF-F9-92-98-68-1F-E2-40-4E-21-B0-C8-34-38-FD-FC) on my supernova research!
 
 - **October 2023:** [Paper](https://daparadiso.github.io/publication/2023-Bandopadhyay-etal) accepted to the Astrophysical Journal Letters
 
