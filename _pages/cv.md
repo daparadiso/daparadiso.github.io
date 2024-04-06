@@ -40,6 +40,7 @@ Publications
 
 Awards
 ======
+* **NSF Graduate Research Fellowship**, National Science Foundation, 2024
 * **Summer Pre-Dissertation Fellowship**, SU Graduate School, 2023
 * **Social Justice and Community Building Award**, SU Department of Physics, 2022
 * **Academic Excellence Prize**, SU Department of Physics, 2022
