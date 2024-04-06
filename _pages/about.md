@@ -28,8 +28,6 @@ Recent Activities
 
 - **January 2024:** I attended AAS where I gave a [poster presentation](https://aas242-aas.ipostersessions.com/?s=BF-F9-92-98-68-1F-E2-40-4E-21-B0-C8-34-38-FD-FC) on my supernova research!
 
-- **October 2023:** [Paper](https://daparadiso.github.io/publication/2023-Bandopadhyay-etal) accepted to the Astrophysical Journal Letters
-
 - **October 2023:** Visited my high school alma mater and gave a talk to the physics class about my research
 
 - **August 2023:** Passed PhD Qualifying Exam
