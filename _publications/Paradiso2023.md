@@ -3,11 +3,11 @@ title: "Low-energy Explosions in a Gravitational Field: Implications for Sub-ene
 collection: publications
 permalink: /publication/2023-10-16-lowenergyexplosions
 #excerpt: 'This paper is about the number 1. The number 2 is left for future work.'
-date: 2023-10-16
-venue: 'The Astrophysics Journal, Under Review'
-paperurl: 'https://arxiv.org/pdf/2310.10713.pdf'
-citation: ' Paradiso, D. A., Coughlin, E. R., Zrake, J., Pasham, D. R., 2023, ApJ, Under Review. doi:10.48550/arXiv.2310.10713'
+date: 2024-1-23
+venue: 'The Astrophysics Journal'
+paperurl: '[https://iopscience.iop.org/article/10.3847/1538-4357/ad11f4](https://iopscience.iop.org/article/10.3847/1538-4357/ad11f4)'
+citation: 'Paradiso, D. A. et al 2024 ApJ 961 158, DOI: 10.3847/1538-4357/ad11f4'
 ---
 
-[Download paper here](https://arxiv.org/pdf/2310.10713.pdf){:target="_blank"}
+[Download paper here](https://iopscience.iop.org/article/10.3847/1538-4357/ad11f4){:target="_blank"}
 
