@@ -5,7 +5,6 @@ permalink: /publication/2023-10-16-lowenergyexplosions
 #excerpt: 'This paper is about the number 1. The number 2 is left for future work.'
 date: 2024-1-23
 venue: 'The Astrophysics Journal'
-paperurl: '[https://iopscience.iop.org/article/10.3847/1538-4357/ad11f4](https://iopscience.iop.org/article/10.3847/1538-4357/ad11f4)'
 citation: 'Paradiso, D. A. et al 2024 ApJ 961 158, DOI: 10.3847/1538-4357/ad11f4'
 ---
 
