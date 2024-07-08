@@ -20,7 +20,7 @@ Although this is not the main focus of my research, I have dabbled a bit in TDE 
 
 Recent Activities
 ------
-- **April 2024:** I was just awarded the NSF Graduate Research Fellowship!!!
+- **April 2024:** Awarded the NSF Graduate Research Fellowship! 😁
 
 - **January 2024:** My first, first-author [paper](https://iopscience.iop.org/article/10.3847/1538-4357/ad11f4) just got published in the Astrophysical Journal!
 
