@@ -11,15 +11,15 @@ main:
     
 #  - title: "Portfolio"
 #    url: /portfolio/
-        
-  - title: "Hobbies"
-    url: /hobbies/
 
   - title: "Resources"
     url: /resources/
     
   - title: "CV"
     url: /cv/
+
+  - title: "Hobbies"
+    url: /hobbies/
     
 #  - title: "Guide"
 #    url: /markdown/
