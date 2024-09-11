@@ -47,12 +47,12 @@ Awards
   
 Teaching
 ======
-* August 2022 -- Present: **Graudate Teaching Assistant**, Syracuse University
+* August 2022 -- May 2024: **Graudate Teaching Assistant**, Syracuse University
   * PHY 212: Electricity and Magnetism
 
 Service and leadership
 ======
-* 2023 -- Present: **President**, Physics Graduate Organization, SU
+* 2023 -- 2024: **President**, Physics Graduate Organization, SU
 * 2022 -- Present: **Mentor**, Research in Phyiscs Summer Program, SU
 * 2021 -- Present: **Tour Guide**, Holden Observatory, SU
 * 2021 -- Present: **Member**, Physics Outreach Group, SU
