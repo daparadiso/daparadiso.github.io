@@ -12,6 +12,6 @@ For the last three summers (2022-2024) I have been a mentor for a total of six S
 During the program this summer I also organized and led a week-long computational bootcamp for all 24 students participating in the program where I introduced the students to computational tools that are crucial for conducting research, including: utilizing the command line (bash scripting) and data analysis with Python.
 
 Home Town Outreach
-------
+======
 Having the opportunity to go back to my home town each year and talk with the high school physics class has been extremely special to me. When I was in their shoes, I didn't know that pursuing a career in research was a possibility and, as someone that (marginally) excelled in STEM subjects, I assumed that the best career choice for me was a degree in engineering. I quickly realized that physics was my true passion and even found out that I could make a career out of it! I have really enjoyed being able to talk with the students about STEM research, what it entails, and my personal experience as someone with at least somewhat of a shared experience with them. 
 
