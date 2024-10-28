@@ -7,7 +7,7 @@ redirect_from:
   - /about/
   - /about.html
 ---
-My name is Daniel Paradiso and I am a [third-year graduate student](https://artsandsciences.syracuse.edu/people/graduate-students/daniel-paradiso/){:target="_blank"} and NSF Graduate Research Fellow in the Department of Physics at Syracuse University working with [Dr. Eric Coughlin](https://ecoughli.expressions.syr.edu/){:target="_blank"}. My research is focused on understanding the deaths of stars in our universe through both self-induced and external mechanisms. 
+My name is Daniel Paradiso (usually just go by Dan) and I am a [third-year graduate student](https://artsandsciences.syracuse.edu/people/graduate-students/daniel-paradiso/){:target="_blank"} and NSF Graduate Research Fellow in the Department of Physics at Syracuse University working with [Dr. Eric Coughlin](https://ecoughli.expressions.syr.edu/){:target="_blank"}. My research is focused on understanding the deaths of stars in our universe through both self-induced and external mechanisms. 
 
 Research
 ------
@@ -16,11 +16,13 @@ My primary research focus revolves around the spectacular, explosive deaths of m
 
 **Tidal Disruption Events:**\
 Tidal disruption events (TDEs) occur when stars much like our sun wander too close to supermassive (> 1 million solar masses!) black holes that lurk in the centers of most galaxies. The tidal force imparted on the star overwhelms the gravitational force that is holding the star together and can rip the star apart into a stream of debris which, as it returns to the black hole, heats up and is emits observable radiation. TDEs therefore provide a way to probe the inner regions of otherwise quiescent galaxies!\
-Although this is not the main focus of my research, I have dabbled a *bit* in TDE research as a mentor for the [SURPh](https://daparadiso.github.io/outreach/) program the past three summers which recently resulted in a [publication](https://iopscience.iop.org/article/10.3847/2041-8213/ad0388). If you would like to learn more about TDE research, you should check out [Eric's website](https://ecoughli.expressions.syr.edu/research/)!
+Although this is not the main focus of my research, I have dabbled a *bit* in TDE research as a mentor for the [SURPh](https://daparadiso.github.io/outreach/) program the past three summers which recently resulted in a [publication](https://iopscience.iop.org/article/10.3847/2041-8213/ad0388). If you would like to learn more about TDE research, you should check out [Eric's website](https://ecoughli.expressions.syr.edu/research/){:target="_blank"} and the work of my collegue [Ananya Bandopadhyay](https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0002-5116-844X&sort=date%20desc%2C%20bibcode%20desc&p_=0){:target="_blank"}!
 
 Recent Activities
 ------
-- **April 2024:** Awarded the NSF Graduate Research Fellowship! 😁
+- **September 2024:** Passed Research Oral Qualifying Exam
+
+- **April 2024:** Awarded the NSF Graduate Research Fellowship! 
 
 - **January 2024:** My first, first-author [paper](https://iopscience.iop.org/article/10.3847/1538-4357/ad11f4) just got published in the Astrophysical Journal!
 
