@@ -8,4 +8,4 @@ venue: 'The Astrophysical Journal'
 citation: 'Paradiso, D. A. & Coughlin, E. R. 2025 ApJ 985 173, DOI: 10.3847/1538-4357/adce6f'
 ---
 
-[Download paper here](10.3847/1538-4357/adce6f){:target="_blank"}
+[Download paper here](https://iopscience.iop.org/article/10.3847/1538-4357/adce6f){:target="_blank"}
