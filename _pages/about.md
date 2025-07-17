@@ -21,6 +21,8 @@ Although this is not the main focus of my research, I have dabbled a *bit* in TD
 
 Recent Activities
 ------
+- **May 2025:** New [paper](https://iopscience.iop.org/article/10.3847/1538-4357/adce6f) published in the Astrophysical Journal! 
+
 - **September 2024:** Passed Research Oral Qualifying Exam
 
 - **April 2024:** Awarded the NSF Graduate Research Fellowship! 
