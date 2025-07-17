@@ -8,4 +8,4 @@ venue: 'The Astrophysical Journal Letters'
 citation: 'Bandopadhyay, A. et al 2024 ApJL 961 L2, DOI: 10.3847/2041-8213/ad0388'
 ---
 
-[Download paper here](10.3847/2041-8213/ad0388){:target="_blank"}
+[Download paper here](https://iopscience.iop.org/article/10.3847/2041-8213/ad0388){:target="_blank"}
