@@ -114,24 +114,37 @@
             useEffect(() => {
                 if (!accessToken || !autoAddEnabled || !queueInfo?.remaining?.length) return;
 
-                const interval = setInterval(async () => {
+                const checkAndAddMore = async () => {
                     try {
                         const response = await fetch('https://api.spotify.com/v1/me/player/queue', {
                             headers: { 'Authorization': `Bearer ${accessToken}` }
                         });
 
-                        if (response.ok) {
-                            const data = await response.json();
-                            const queueLength = data.queue?.length || 0;
+                        if (!response.ok) {
+                            console.log('Queue check failed:', response.status);
+                            return;
+                        }
 
-                            if (queueLength < AUTO_ADD_THRESHOLD && queueInfo.remaining.length > 0) {
-                                await addNextBatch();
-                            }
+                        const data = await response.json();
+                        const queueLength = data.queue?.length || 0;
+
+                        console.log(`Queue length: ${queueLength}, Threshold: ${AUTO_ADD_THRESHOLD}`);
+
+                        if (queueLength < AUTO_ADD_THRESHOLD && queueInfo.remaining.length > 0) {
+                            console.log('Queue low, refilling...');
+                            const songsNeeded = BATCH_SIZE - queueLength;
+                            await addNextBatch(songsNeeded);
                         }
                     } catch (err) {
                         console.error('Error checking queue:', err);
                     }
-                }, 30000); // Check every 30 seconds
+                };
+
+                // Run immediately on mount
+                checkAndAddMore();
+
+                // Then check every 30 seconds
+                const interval = setInterval(checkAndAddMore, 30000);
 
                 return () => clearInterval(interval);
             }, [accessToken, autoAddEnabled, queueInfo]);
@@ -394,17 +407,21 @@
                 if (!response.ok) throw new Error('Failed to add track to queue');
             };
 
-            const addNextBatch = async () => {
+            const addNextBatch = async (count = BATCH_SIZE) => {
                 if (!queueInfo?.remaining?.length) return;
 
-                const batch = queueInfo.remaining.slice(0, BATCH_SIZE);
-                const remaining = queueInfo.remaining.slice(BATCH_SIZE);
+                const numToAdd = Math.min(count, queueInfo.remaining.length);
+                const batch = queueInfo.remaining.slice(0, numToAdd);
+                const remaining = queueInfo.remaining.slice(numToAdd);
 
-                setStatus(`Auto-adding ${batch.length} more songs...`);
+                setStatus(`Adding ${batch.length} songs to queue...`);
 
                 for (let i = 0; i < batch.length; i++) {
                     try {
                         await addToQueue(batch[i].uri);
+                        if (i % 10 === 9) {
+                            setStatus(`Adding songs... ${i + 1}/${batch.length}`);
+                        }
                     } catch (err) {
                         console.error('Error adding track:', err);
                     }
@@ -420,11 +437,50 @@
                 await saveQueueInfo(newQueueInfo);
 
                 if (remaining.length > 0) {
-                    setStatus(`✓ Added ${batch.length} more songs! ${remaining.length} remaining.`);
+                    setStatus(`✓ Added ${batch.length} songs! ${remaining.length} remaining.`);
                 } else {
                     setStatus(`✓ All ${newQueueInfo.total} songs added to queue!`);
                     setAutoAddEnabled(false);
                     await clearQueueInfo();
+                }
+            };
+
+            const refillQueue = async () => {
+                if (!queueInfo?.remaining?.length) return;
+
+                setIsShuffling(true);
+                setStatus('Checking queue...');
+
+                try {
+                    const response = await fetch('https://api.spotify.com/v1/me/player/queue', {
+                        headers: { 'Authorization': `Bearer ${accessToken}` }
+                    });
+
+                    if (!response.ok) {
+                        setError('Could not check queue length. Adding 80 songs anyway...');
+                        await addNextBatch(BATCH_SIZE);
+                        setIsShuffling(false);
+                        return;
+                    }
+
+                    const data = await response.json();
+                    const currentQueueLength = data.queue?.length || 0;
+                    const songsNeeded = Math.max(0, BATCH_SIZE - currentQueueLength);
+
+                    if (songsNeeded === 0) {
+                        setStatus('Queue is already full! (80+ songs)');
+                        setIsShuffling(false);
+                        return;
+                    }
+
+                    setStatus(`Queue has ${currentQueueLength} songs, adding ${songsNeeded} more...`);
+                    await addNextBatch(songsNeeded);
+                } catch (err) {
+                    setError('Error refilling queue: ' + err.message);
+                    // Fallback: just add 80 songs
+                    await addNextBatch(BATCH_SIZE);
+                } finally {
+                    setIsShuffling(false);
                 }
             };
 
@@ -589,37 +645,17 @@
 
                             {queueInfo && (
                                 <div className="bg-blue-900/30 border border-blue-600 rounded-lg p-4 mb-6">
-                                    <div className="flex items-center justify-between mb-2">
-                                        <div>
-                                            <div className="text-sm text-blue-400 mb-1">Queue Progress</div>
-                                            <div className="text-white font-semibold">
-                                                {queueInfo.added} of {queueInfo.total} songs queued
-                                            </div>
-                                            <div className="text-blue-300 text-sm">
-                                                {queueInfo.remaining.length} remaining
-                                            </div>
-                                        </div>
-                                        {autoAddEnabled && (
-                                            <div className="text-green-400 text-xs">
-                                                Auto-adding ✓
-                                            </div>
-                                        )}
+                                    <div className="text-sm text-blue-400 mb-1">Shuffle Progress</div>
+                                    <div className="text-white font-semibold text-lg">
+                                        {queueInfo.added} / {queueInfo.total} songs queued
                                     </div>
-                                    {queueInfo.remaining.length > 0 && (
-                                        <div className="flex gap-2 mt-2">
-                                            <button
-                                                onClick={addNextBatch}
-                                                disabled={isShuffling}
-                                                className="flex-1 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-600 text-white text-sm py-2 px-4 rounded"
-                                            >
-                                                Add {Math.min(BATCH_SIZE, queueInfo.remaining.length)} More
-                                            </button>
-                                            <button
-                                                onClick={clearQueueInfo}
-                                                className="bg-gray-700 hover:bg-gray-600 text-white text-sm py-2 px-4 rounded"
-                                            >
-                                                Clear
-                                            </button>
+                                    {queueInfo.remaining.length > 0 ? (
+                                        <div className="text-blue-300 text-sm mt-1">
+                                            {queueInfo.remaining.length} songs remaining - click below to add more
+                                        </div>
+                                    ) : (
+                                        <div className="text-green-400 text-sm mt-1">
+                                            ✓ All songs queued!
                                         </div>
                                     )}
                                 </div>
@@ -643,6 +679,16 @@
                                 )}
                             </button>
 
+                            {queueInfo && queueInfo.remaining.length > 0 && (
+                                <button
+                                    onClick={refillQueue}
+                                    disabled={isShuffling}
+                                    className="w-full mt-3 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-600 text-white font-semibold py-4 px-6 rounded-full transition-colors duration-200"
+                                >
+                                    Refill Queue ({queueInfo.remaining.length} songs remaining)
+                                </button>
+                            )}
+
                             {status && (
                                 <div className="mt-4 p-4 bg-green-900/30 border border-green-600 rounded text-green-200 text-sm">
                                     {status}
@@ -660,12 +706,14 @@
                                 <ol className="list-decimal list-inside space-y-1">
                                     <li>Start playing a playlist, album, or Liked Songs on Spotify</li>
                                     <li>Click "Shuffle Current Source"</li>
-                                    <li>First 80 songs will be added immediately</li>
-                                    <li>More songs auto-add as you listen (keep this tab open!)</li>
-                                    <li>Or manually click "Add More Songs" anytime</li>
+                                    <li>First 80 songs added to your queue instantly</li>
+                                    <li>When running low, click "Refill Queue" to top back up to 80</li>
                                 </ol>
                                 <p className="text-xs text-gray-500 mt-4">
-                                    Note: Radio features (Artist Radio, Spotify Radio) and algorithmic playlists (Discover Weekly, Daily Mix) cannot be shuffled due to Spotify API restrictions.
+                                    💡 Tip: The "Refill Queue" button intelligently adds only what you need. If you have 67 songs left, it adds 13 to reach 80.
+                                </p>
+                                <p className="text-xs text-gray-500 mt-2">
+                                    Note: Radio features and algorithmic playlists (Discover Weekly, Daily Mix) cannot be shuffled due to Spotify API restrictions.
                                 </p>
                             </div>
                         </div>
