@@ -188,17 +188,57 @@
                     
                     if (data.context && data.context.type === 'playlist') {
                         return { type: 'playlist', id: data.context.uri.split(':')[2] };
+                    } else if (data.context && data.context.type === 'album') {
+                        return { type: 'album', id: data.context.uri.split(':')[2] };
                     } else if (data.context && data.context.type === 'collection') {
                         return { type: 'liked', id: 'liked' };
                     } else if (!data.context) {
                         // No context might mean Liked Songs on some clients
                         return { type: 'liked', id: 'liked' };
+                    } else if (data.context && (data.context.type === 'artist' || data.context.type.includes('radio'))) {
+                        setError('Radio features cannot be shuffled - they generate songs dynamically in real-time.');
+                        return null;
                     } else {
-                        setError('You are not currently playing from a playlist or Liked Songs.');
+                        setError(`Cannot shuffle from ${data.context?.type || 'this source'}. Try playing from a playlist, album, or Liked Songs.`);
                         return null;
                     }
                 } catch (err) {
                     setError('Error getting playback: ' + err.message);
+                    return null;
+                }
+            };
+
+            const getAlbumTracks = async (albumId) => {
+                try {
+                    let allTracks = [];
+                    let url = `https://api.spotify.com/v1/albums/${albumId}/tracks?limit=50`;
+
+                    while (url) {
+                        const response = await fetch(url, {
+                            headers: { 'Authorization': `Bearer ${accessToken}` }
+                        });
+
+                        if (!response.ok) {
+                            const errorData = await response.json().catch(() => ({}));
+                            throw new Error(`Failed to get album tracks: ${response.status} - ${errorData.error?.message || 'Unknown error'}`);
+                        }
+
+                        const data = await response.json();
+                        allTracks = [...allTracks, ...data.items.filter(item => item && item.uri)];
+                        url = data.next;
+                    }
+
+                    const albumResponse = await fetch(`https://api.spotify.com/v1/albums/${albumId}`, {
+                        headers: { 'Authorization': `Bearer ${accessToken}` }
+                    });
+                    const albumData = await albumResponse.json();
+
+                    return {
+                        name: albumData.name,
+                        tracks: allTracks
+                    };
+                } catch (err) {
+                    setError('Error getting album: ' + err.message);
                     return null;
                 }
             };
@@ -240,7 +280,10 @@
                             headers: { 'Authorization': `Bearer ${accessToken}` }
                         });
 
-                        if (!response.ok) throw new Error('Failed to get playlist tracks');
+                        if (!response.ok) {
+                            const errorData = await response.json().catch(() => ({}));
+                            throw new Error(`Failed to get playlist tracks: ${response.status} - ${errorData.error?.message || 'Unknown error'}`);
+                        }
 
                         const data = await response.json();
                         allTracks = [...allTracks, ...data.items.filter(item => item.track && item.track.uri)];
@@ -250,6 +293,12 @@
                     const playlistResponse = await fetch(`https://api.spotify.com/v1/playlists/${playlistId}`, {
                         headers: { 'Authorization': `Bearer ${accessToken}` }
                     });
+                    
+                    if (!playlistResponse.ok) {
+                        const errorData = await playlistResponse.json().catch(() => ({}));
+                        throw new Error(`Failed to get playlist info: ${playlistResponse.status} - ${errorData.error?.message || 'Unknown error'}`);
+                    }
+                    
                     const playlistData = await playlistResponse.json();
 
                     return {
@@ -297,6 +346,8 @@
                     
                     if (playbackInfo.type === 'liked') {
                         playlistData = await getLikedSongs();
+                    } else if (playbackInfo.type === 'album') {
+                        playlistData = await getAlbumTracks(playbackInfo.id);
                     } else {
                         playlistData = await getPlaylistTracks(playbackInfo.id);
                     }
@@ -409,7 +460,9 @@
 
                             {playlist && (
                                 <div className="bg-gray-800 rounded-lg p-4 mb-6">
-                                    <div className="text-sm text-gray-400 mb-2">Playlist</div>
+                                    <div className="text-sm text-gray-400 mb-2">
+                                        {playlist.name === 'Liked Songs' ? 'Liked Songs' : 'Source'}
+                                    </div>
                                     <div className="text-white font-semibold">{playlist.name}</div>
                                     <div className="text-gray-400 text-sm">{playlist.tracks.length} tracks</div>
                                 </div>
@@ -428,7 +481,7 @@
                                 ) : (
                                     <>
                                         <Shuffle />
-                                        Shuffle Current Playlist/Liked Songs
+                                        Shuffle Current Source
                                     </>
                                 )}
                             </button>
@@ -448,11 +501,14 @@
                             <div className="mt-8 text-gray-400 text-sm space-y-2">
                                 <p className="font-semibold text-gray-300">How to use:</p>
                                 <ol className="list-decimal list-inside space-y-1">
-                                    <li>Start playing a playlist or Liked Songs on Spotify</li>
-                                    <li>Click "Shuffle Current Playlist/Liked Songs"</li>
+                                    <li>Start playing a playlist, album, or Liked Songs on Spotify</li>
+                                    <li>Click "Shuffle Current Source"</li>
                                     <li>All tracks will be added to your queue in truly random order</li>
                                     <li>Skip to the next track to start the shuffled queue</li>
                                 </ol>
+                                <p className="text-xs text-gray-500 mt-4">
+                                    Note: Radio features (Artist Radio, Spotify Radio) cannot be shuffled as they generate songs dynamically.
+                                </p>
                             </div>
                         </div>
                     </div>
