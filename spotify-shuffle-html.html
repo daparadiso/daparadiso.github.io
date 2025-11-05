@@ -57,7 +57,8 @@
                 'user-modify-playback-state',
                 'user-read-currently-playing',
                 'playlist-read-private',
-                'playlist-read-collaborative'
+                'playlist-read-collaborative',
+                'user-library-read'
             ].join(' ');
 
             // PKCE helper functions
@@ -186,13 +187,45 @@
                     setCurrentTrack(data.item);
                     
                     if (data.context && data.context.type === 'playlist') {
-                        return data.context.uri.split(':')[2];
+                        return { type: 'playlist', id: data.context.uri.split(':')[2] };
+                    } else if (data.context && data.context.type === 'collection') {
+                        return { type: 'liked', id: 'liked' };
+                    } else if (!data.context) {
+                        // No context might mean Liked Songs on some clients
+                        return { type: 'liked', id: 'liked' };
                     } else {
-                        setError('You are not currently playing from a playlist.');
+                        setError('You are not currently playing from a playlist or Liked Songs.');
                         return null;
                     }
                 } catch (err) {
                     setError('Error getting playback: ' + err.message);
+                    return null;
+                }
+            };
+
+            const getLikedSongs = async () => {
+                try {
+                    let allTracks = [];
+                    let url = 'https://api.spotify.com/v1/me/tracks?limit=50';
+
+                    while (url) {
+                        const response = await fetch(url, {
+                            headers: { 'Authorization': `Bearer ${accessToken}` }
+                        });
+
+                        if (!response.ok) throw new Error('Failed to get liked songs');
+
+                        const data = await response.json();
+                        allTracks = [...allTracks, ...data.items.filter(item => item.track && item.track.uri)];
+                        url = data.next;
+                    }
+
+                    return {
+                        name: 'Liked Songs',
+                        tracks: allTracks.map(item => item.track)
+                    };
+                } catch (err) {
+                    setError('Error getting liked songs: ' + err.message);
                     return null;
                 }
             };
@@ -253,14 +286,21 @@
                 setStatus('Getting current playback...');
 
                 try {
-                    const playlistId = await getCurrentPlayback();
-                    if (!playlistId) {
+                    const playbackInfo = await getCurrentPlayback();
+                    if (!playbackInfo) {
                         setIsShuffling(false);
                         return;
                     }
 
-                    setStatus('Fetching playlist tracks...');
-                    const playlistData = await getPlaylistTracks(playlistId);
+                    setStatus('Fetching tracks...');
+                    let playlistData;
+                    
+                    if (playbackInfo.type === 'liked') {
+                        playlistData = await getLikedSongs();
+                    } else {
+                        playlistData = await getPlaylistTracks(playbackInfo.id);
+                    }
+                    
                     if (!playlistData) {
                         setIsShuffling(false);
                         return;
@@ -388,7 +428,7 @@
                                 ) : (
                                     <>
                                         <Shuffle />
-                                        Shuffle Current Playlist
+                                        Shuffle Current Playlist/Liked Songs
                                     </>
                                 )}
                             </button>
@@ -408,8 +448,8 @@
                             <div className="mt-8 text-gray-400 text-sm space-y-2">
                                 <p className="font-semibold text-gray-300">How to use:</p>
                                 <ol className="list-decimal list-inside space-y-1">
-                                    <li>Start playing a playlist on Spotify</li>
-                                    <li>Click "Shuffle Current Playlist"</li>
+                                    <li>Start playing a playlist or Liked Songs on Spotify</li>
+                                    <li>Click "Shuffle Current Playlist/Liked Songs"</li>
                                     <li>All tracks will be added to your queue in truly random order</li>
                                     <li>Skip to the next track to start the shuffled queue</li>
                                 </ol>
