@@ -25,6 +25,13 @@ Research experience
 * 2019 -- 2022: **Undergraduate Research Assistant**, Syracuse University
   * Designed and constructed an arrray of muon detectors
   * Advisors: Mitch Soderberg and Denver Whittington
+
+Awards
+======
+* **NSF Graduate Research Fellowship**, National Science Foundation, 2024
+* **Summer Pre-Dissertation Fellowship**, SU Graduate School, 2023
+* **Social Justice and Community Building Award**, SU Department of Physics, 2022
+* **Academic Excellence Prize**, SU Department of Physics, 2022 
   
 Publications
 ======
@@ -37,13 +44,6 @@ Publications
   <ul>{% for post in site.talks %}
     {% include archive-single-talk-cv.html %}
   {% endfor %}</ul> -->
-
-Awards
-======
-* **NSF Graduate Research Fellowship**, National Science Foundation, 2024
-* **Summer Pre-Dissertation Fellowship**, SU Graduate School, 2023
-* **Social Justice and Community Building Award**, SU Department of Physics, 2022
-* **Academic Excellence Prize**, SU Department of Physics, 2022
   
 Teaching
 ======
