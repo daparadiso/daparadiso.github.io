@@ -21,7 +21,7 @@ Although this is not the main focus of my research, I have dabbled a *bit* in TD
 
 Recent Activities
 ------
-- **June 2026:** New [paper](https://iopscience.iop.org/article/10.3847/1538-4357/ae6b85) on failed supernovae with recent Syracuse undergraduate student Sarah Vallejo! 
+- **June 2026:** New [paper](https://iopscience.iop.org/article/10.3847/1538-4357/ae6b85) on failed supernovae with recent Syracuse University graduate Sarah Vallejo! 
 
 - **May 2025:** New [paper](https://iopscience.iop.org/article/10.3847/1538-4357/adce6f) published in the Astrophysical Journal! 
 
