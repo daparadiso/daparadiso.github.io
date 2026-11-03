@@ -7,7 +7,7 @@ redirect_from:
   - /about/
   - /about.html
 ---
-My name is Daniel (Dan) Paradiso and I am a [fourth-year graduate student](https://artsandsciences.syracuse.edu/people/graduate-students/daniel-paradiso/){:target="_blank"} and NSF Graduate Research Fellow in the Department of Physics at Syracuse University working with [Eric Coughlin](https://ecoughli.expressions.syr.edu/){:target="_blank"}. My research is focused on understanding the deaths of stars in our universe through both self-induced and external mechanisms. 
+My name is Daniel (Dan) Paradiso and I am a [fifth-year graduate student](https://artsandsciences.syracuse.edu/people/graduate-students/daniel-paradiso/){:target="_blank"} and NSF Graduate Research Fellow in the Department of Physics at Syracuse University working with [Eric Coughlin](https://ecoughli.expressions.syr.edu/){:target="_blank"}. My research is focused on understanding the deaths of stars in our universe through both self-induced and external mechanisms. 
 
 Research
 ------
@@ -15,12 +15,14 @@ Research
 My primary research focus revolves around the spectacular, explosive deaths of massive stars which are known as core-collapse supernovae. In particular, I study the characteristics and dynamics of shockwaves -- which are the byproducts of the formation and "bounce" of a neutron star during core-collapse -- using a combination of analytical and numerical methods. In a typical core-collapse supernova, the shockwave propagates through and inevitably unbinds the overlying stellar envelope. However, decades of observation and theoretical/computational research has shown that not all stars that undergo core-collapse generate successful explosions. I am extremely interested in trying to gain a better understanding of both failed and low-energy core-collapse supernovae, and I hope that my research will provide a better understanding of the deaths of massive stars in addition to lending insight into the formation of compact objects (neutron stars and solar-mass black holes). You can check out my papers related to this topic [here](https://daparadiso.github.io/publications/)!
 
 **Tidal Disruption Events:**\
-Tidal disruption events (TDEs) occur when stars much like our sun wander too close to supermassive (> 1 million solar masses!) black holes that lurk in the centers of most galaxies. The tidal force imparted on the star overwhelms the gravitational force that is holding the star together and can rip the star apart into a stream of debris which, as it returns to the black hole, heats up and is emits observable radiation. TDEs therefore provide a way to probe the inner regions of otherwise quiescent galaxies!\
+Tidal disruption events (TDEs) occur when stars much like our sun wander too close to supermassive (> 1 million solar masses!) black holes that lurk in the centers of most galaxies. The tidal force imparted on the star overwhelms the gravitational force that is holding the star together and can rip the star apart into a stream of debris which, as it returns to the black hole, heats up and emits observable radiation. TDEs therefore provide a way to probe the inner regions of otherwise quiescent galaxies!\
  \
 Although this is not the main focus of my research, I have dabbled a *bit* in TDE research as a mentor for the [SURPh](https://daparadiso.github.io/outreach/) program the past three summers which recently resulted in a [publication](https://iopscience.iop.org/article/10.3847/2041-8213/ad0388). If you would like to learn more about TDE research, you should check out [Eric's website](https://ecoughli.expressions.syr.edu/research/){:target="_blank"} and the work of my colleague [Ananya Bandopadhyay](https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0002-5116-844X&sort=date%20desc%2C%20bibcode%20desc&p_=0){:target="_blank"}!
 
 Recent Activities
 ------
+- **June 2026:** New [paper](https://iopscience.iop.org/article/10.3847/1538-4357/ae6b85) on failed supernovae with recent Syracuse undergraduate student Sarah Vallejo! 
+
 - **May 2025:** New [paper](https://iopscience.iop.org/article/10.3847/1538-4357/adce6f) published in the Astrophysical Journal! 
 
 - **September 2024:** Passed Research Oral Qualifying Exam
